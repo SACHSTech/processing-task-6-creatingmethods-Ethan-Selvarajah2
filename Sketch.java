@@ -22,47 +22,48 @@ public class Sketch extends PApplet {
 
   /**
    * Draws a house
-   * @param xLocation the x-location of the first point
-   * @param yLocation the y-location of the first point
-   * @param size the sizes of the square, triangle, and rectangle
+   * @param fltXLocation the x-location of the first point
+   * @param fltYLocation the y-location of the first point
+   * @param fltSize the sizes of the square, triangle, and rectangle
    */
-  void drawHouse(float xLocation, float yLocation, float size) {
+  void drawHouse(float fltXLocation, float fltYLocation, float fltSize) {
     fill(191, 142, 52);
-    square((float)(xLocation), (float)(yLocation), (float)(size));
-    triangle((float)(xLocation), (float)(yLocation), (float)(xLocation + size / 2), (float)(yLocation - size / 2),
-    (float)(xLocation + size), (float)(yLocation));
+    square((float)(fltXLocation), (float)(fltYLocation), (float)(fltSize));
+    triangle((float)(fltXLocation), (float)(fltYLocation), (float)(fltXLocation + fltSize / 2), (float)(fltYLocation - fltSize / 2),
+    (float)(fltXLocation + fltSize), (float)(fltYLocation));
   
     fill(230, 175, 76);
-    rect((float)(xLocation + size / 2), (float)(yLocation + size - size / 2), (float)(size / 4), (float)(size / 2));
+    rect((float)(fltXLocation + fltSize / 2), (float)(fltYLocation + fltSize - fltSize / 2), (float)(fltSize / 4), (float)(fltSize
+    / 2));
   }
 
   /**
    * Draws a shocked face
-   * @param xLocation the x-location of the center of the ellipse
-   * @param yLocation the y-location of the center of the ellipse
-   * @param size the size of the ellipse
-   * @param colour1 the first RGB value
-   * @param colour2 the second RGB value
-   * @param colour3 the third RGB value
+   * @param fltXLocation the x-location of the center of the ellipse
+   * @param fltYLocation the y-location of the center of the ellipse
+   * @param fltSize the size of the ellipse
+   * @param intColour1 the first RGB value
+   * @param intColour2 the second RGB value
+   * @param intColour3 the third RGB value
    */
-  void drawFace(float xLocation, float yLocation, float size, int colour1, int colour2, int colour3){
-    fill(colour1, colour2, colour3);
-    ellipse(xLocation, yLocation, size, size);
+  void drawFace(float fltXLocation, float fltYLocation, float fltSize, int intColour1, int intColour2, int intColour3){
+    fill(intColour1, intColour2, intColour3);
+    ellipse(fltXLocation, fltYLocation, fltSize, fltSize);
 
     fill(0);
-    ellipse(xLocation - size / 10, yLocation - size / 10, size / 10, size / 10);
-    ellipse(xLocation + size / 10, yLocation - size / 10, size / 10, size / 10);
+    ellipse(fltXLocation - fltSize / 10, fltYLocation - fltSize / 10, fltSize / 10, fltSize / 10);
+    ellipse(fltXLocation + fltSize / 10, fltYLocation - fltSize / 10, fltSize / 10, fltSize / 10);
 
-    ellipse(xLocation, yLocation + size / 5, size / 5, size / 5);
+    ellipse(fltXLocation, fltYLocation + fltSize / 5, fltSize / 5, fltSize / 5);
   }
 
   /**
    * Calculates the area of the face
-   * @param size2 the size of the face
+   * @param fltSize2 the size of the face
    * @return returns the area of the face
    */
-  private float faceAreaCalc(float size2) {
-    return (float)(Math.PI * Math.pow(size2, 2));
+  private float faceAreaCalc(float fltSize2) {
+    return (float)(Math.PI * Math.pow(fltSize2, 2));
     
   }
   
